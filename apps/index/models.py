@@ -7,6 +7,9 @@ class Settings(models.Model):
         max_length=255,
         verbose_name="Название сайта"
     )
+    descriptions = models.TextField(
+        verbose_name="Описание сайта"
+    )
     logo = ResizedImageField(
         force_format="WEBP", 
         quality=100, 
@@ -26,16 +29,16 @@ class Settings(models.Model):
         max_length=255,
         verbose_name='Адрес'
     )
-    facebook = models.URLField(
-        verbose_name='Facebook',
+    whatsapp = models.URLField(
+        verbose_name='Whatspp URL',
         blank=True, null=True
     )
     instagram = models.URLField(
-        verbose_name='Instagram',
+        verbose_name='Instagram URL',
         blank=True, null=True
     )
     youtube = models.URLField(
-        verbose_name='Youtube',
+        verbose_name='Youtube URL',
         blank=True, null=True
     )
     
@@ -46,3 +49,159 @@ class Settings(models.Model):
             verbose_name = "Основная настройка"
             verbose_name_plural = "Основные настройки"
             
+class Slide(models.Model):
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='slide/',
+        verbose_name="Фотография",
+        blank = True, null = True
+    )
+    title  = models.CharField(
+        max_length=255,
+        verbose_name="Название"
+    )
+    descriptions = models.TextField(
+        verbose_name="Описание"
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+            verbose_name = "Слайд на главной странице"
+            verbose_name_plural = "Слайды на главной странице"
+            
+class About(models.Model):
+    image_1 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='about/',
+        verbose_name="Первая фотография",
+        blank = True, null = True
+    )
+    image_2 = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='about/',
+        verbose_name="Вторая фотография",
+        blank = True, null = True
+    )
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Название"
+    )
+    descriptions = models.TextField(
+        verbose_name="Описание"
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+            verbose_name = "Информация о нас, на главной странице"
+            verbose_name_plural = "Информации о нас, на главной странице"
+            
+class News(models.Model):
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='news/',
+        verbose_name="Новости",
+        blank = True, null = True
+    )
+
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Название"
+    )
+    descriptions = models.TextField(
+        verbose_name="Описание"
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+            verbose_name = "Новость"
+            verbose_name_plural = "Новости"
+            
+class Video(models.Model):
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='video/',
+        verbose_name="Фотография для баннера",
+        blank = True, null = True
+    )
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Название видео"
+    )
+    url = models.URLField(
+        verbose_name="Ссылка на видео"
+    )
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+            verbose_name = "Видео о MerriGarden"
+            verbose_name_plural = "Видео о MerriGarden"
+            
+class Services(models.Model):
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='services/',
+        verbose_name="Фотография услуги",
+        blank = True, null = True
+    )
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Название"
+    )
+    descriptions = models.TextField(
+        verbose_name="Описание"
+    )
+
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+            verbose_name = "Услуга"
+            verbose_name_plural = "Услуги"
+            
+class Team(models.Model):
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='team/',
+        verbose_name="Фотография",
+        blank = True, null = True
+    )
+    title = models.CharField(
+        max_length=255,
+        verbose_name="Имя"
+    )
+    descriptions = models.TextField(
+        verbose_name="Описание"
+    )
+    whatsapp = models.URLField(
+        verbose_name='Whatspp URL',
+        blank=True, null=True
+    )
+    instagram = models.URLField(
+        verbose_name='Instagram URL',
+        blank=True, null=True
+    )
+    youtube = models.URLField(
+        verbose_name='Youtube URL',
+        blank=True, null=True
+    )
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+            verbose_name = "Наша команда"
+            verbose_name_plural = "Наша команда"

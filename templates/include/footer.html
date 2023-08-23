@@ -1,0 +1,62 @@
+{% load static %}
+<footer class="footer">
+    <div class="footer-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="footer-column footer-about">
+                        <h3 class="footer-title">О нас</h3>
+                        <p class="footer-about-text">{{setting.descriptions}}</p>
+                    </div>
+                </div>
+                <div class="col-md-3 offset-md-1">
+                    <div class="footer-column footer-explore clearfix">
+                        <h3 class="footer-title">Меню</h3>
+                        <ul class="footer-explore-list list-unstyled">
+                            <li><a href="#">Главная</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Команда</a></li>
+                            <li><a href="#">Бронирование</a></li>
+                            <li><a href="#">Галерея</a></li>
+                            <li><a href="#">Портфолио</a></li>
+                            <li><a href="#">Контакты</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-column footer-contact">
+                        <h3 class="footer-title">Контакты</h3>
+                        <p class="footer-contact-text">{{setting.location}}
+                        </p>
+                        <div class="footer-contact-info">
+                            <p class="footer-contact-phone"><span class="flaticon-call"></span> {{setting.phone}}</p>
+                            <p class="footer-contact-mail">{{setting.email}}</p>
+                        </div>
+                        <div class="footer-about-social-list">
+                            {% if setting.instagram%}
+                            <a href="{{setting.instagram}}"><i class="ti-instagram"></i></a>
+                            {% endif %}
+                            {% if setting.whatsapp%}
+                            <a href="{{setting.whatsapp}}"><i class="ti-themify-favicon"></i></a>
+                            {% endif %}
+                            {% if setting.youtube%}
+                            <a href="{{setting.youtube}}"><i class="ti-youtube"></i></a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="footer-bottom-inner">
+                        <p class="footer-bottom-copy-right">© Copyright 2023 by <a href="https://www.instagram.com/n.erk1nbaew/">Нурболот</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
