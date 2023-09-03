@@ -5,38 +5,17 @@
     
     <!-- Slider -->
     {% include 'include/header.html' %}
-    <header class="header slider-fade">
-        <div class="owl-carousel owl-theme">
-            <!-- The opacity on the image is made with "data-overlay-dark="number". You can change it using the numbers 0-9. -->
-            {% for slide in slide%}
-            <div class="text-center item bg-img" data-overlay-dark="2" data-background="{{slide.image.url}}">
-                <div class="v-middle caption">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-10 offset-md-1 bg-main-with-transparent">
-                                <h4>{{slide.title}}</h4>
-                                <h1>{{slide.descriptions}}</h1>
-                                <div class="butn-light mt-30 mb-30"> <a href="#"
-                                        data-scroll-nav="1"><span>Подробнее</span></a> </div>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Header Banner -->
+    <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="4" data-background="{% static 'img/merrigarden/banner/1.jpg' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 caption mt-90">
+                    <h5>MerriGarden</h5>
+                    <h1>О нас</h1>
                 </div>
             </div>
-            {% endfor %}
-            
         </div>
-        <!-- slider reservation -->
-        <div class="reservation">
-            <a href="tel:{{setting.phone}}">
-                <div class="icon d-flex justify-content-center align-items-center">
-                    <i class="flaticon-call"></i>
-                </div>
-                <div class="call"><span>{{setting.phone}}</span> <br>забронировать</div>
-            </a>
-        </div>
-    </header>
-    <!-- About -->
+    </div>
     <section class="about section-padding">
         <div class="container">
             <div class="row">
@@ -63,31 +42,7 @@
     </section>
     <!-- Rooms -->
     
-    <!-- Promo Video -->
-    <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3"
-        data-background="{{video.image.url}}">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 offset-md-2 text-center">
-                    <div class="section-subtitle"><span>MerriGarden</span></div>
-                    <div class="section-title"><span>{{video.title}}</span></div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="text-center col-md-12">
-                    <a class="vid" href="{{video.url}}">
-                        <div class="vid-butn">
-                            <span class="icon">
-                                <i class="ti-control-play"></i>
-                            </span>
-                        </div>
-                    </a>
-                </div>
 
-            </div>
-        </div>
-    </section>
-    <!-- Facilties -->
     <section class="facilties pt-60">
         <div class="container">
             <div class="row">
@@ -148,38 +103,6 @@
             </div>
         </div>
     </section>
-    <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-subtitle">MerriGarden</div>
-                    <div class="section-title">Новости</div>
-                </div>
-            </div>
-            <div class="row">
-                {% for news in news%}
-                <div class="col-md-4">
-                    <div class="item br-20">
-                        <div class="position-re o-hidden"><img src="{{news.image.url}}" alt=""></div>
-                        <div class="con">
-                            <h5><a href="#">{{news.title}}</a> </h5>
-                            <div class="line"></div>
-                            <div class="row facilities">
-                                <div class="col col-md-5 text-end">
-                                    <div class="permalink">
-                                        <a href="#">
-                                            Подробнее<i class="ti-arrow-right"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </section>
     <!-- Reservation & Booking Form -->
     <section class="testimonials">
         <div class="background bg-img bg-fixed section-padding pb-0" data-background="{% static 'img/merrigarden/banner/2.jpg' %}"
@@ -191,7 +114,7 @@
                         <div class="reservations mb-30">
                             <div class="icon color-1"><span class="flaticon-call"></span></div>
                             <div class="text">
-                                <p class="color-1">Забронировать</p> <a class="color-1" href="tel:{{setting.phone}}">{{setting.phone}}</a>
+                                <p class="color-1">Забронировать</p> <a class="color-1" href="tel:">996 555 444 333</a>
                             </div>
                         </div>
                         <p><i class="ti-check"></i><small>Позвоните нам</small></p>
@@ -274,36 +197,6 @@
             </div>
         </div>
     </section>
-    <!-- Clients -->
-    <section class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="owl-carousel owl-theme">
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/1.png' %}" alt=""></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/2.png' %}" alt=""></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/3.png' %}" alt=""></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/4.png' %}" alt=""></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/5.png' %}" alt=""></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/6.png' %}" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
     <!-- Footer -->
     {% include 'include/footer.html' %}
-   
-{% endblock %}
+{% endblock%}

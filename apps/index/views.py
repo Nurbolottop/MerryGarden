@@ -14,3 +14,12 @@ def index(request):
     services = Services.objects.all()
     team = Team.objects.all()
     return render(request, 'index.html', locals())
+
+def about(request):
+    video = Video.objects.latest('id')
+    services = Services.objects.all()
+    setting = Settings.objects.latest('id')
+    about = About.objects.latest('id')
+    team = Team.objects.all()
+    return render(request, 'about.html', locals())
+    
