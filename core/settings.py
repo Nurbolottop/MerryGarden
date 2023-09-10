@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     #settings
     
     #apps
-    'apps.index'
+    'apps.index',
+    'apps.secondary'
 ]
 
 MIDDLEWARE = [

@@ -72,60 +72,6 @@ class Slide(models.Model):
             verbose_name = "Слайд на главной странице"
             verbose_name_plural = "Слайды на главной странице"
             
-class About(models.Model):
-    image_1 = ResizedImageField(
-        force_format="WEBP", 
-        quality=100, 
-        upload_to='about/',
-        verbose_name="Первая фотография",
-        blank = True, null = True
-    )
-    image_2 = ResizedImageField(
-        force_format="WEBP", 
-        quality=100, 
-        upload_to='about/',
-        verbose_name="Вторая фотография",
-        blank = True, null = True
-    )
-    title = models.CharField(
-        max_length=255,
-        verbose_name="Название"
-    )
-    descriptions = models.TextField(
-        verbose_name="Описание"
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-            verbose_name = "Информация о нас, на главной странице"
-            verbose_name_plural = "Информации о нас, на главной странице"
-            
-class News(models.Model):
-    image = ResizedImageField(
-        force_format="WEBP", 
-        quality=100, 
-        upload_to='news/',
-        verbose_name="Новости",
-        blank = True, null = True
-    )
-
-    title = models.CharField(
-        max_length=255,
-        verbose_name="Название"
-    )
-    descriptions = models.TextField(
-        verbose_name="Описание"
-    )
-
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-            verbose_name = "Новость"
-            verbose_name_plural = "Новости"
-            
 class Video(models.Model):
     image = ResizedImageField(
         force_format="WEBP", 
