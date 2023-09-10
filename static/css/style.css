@@ -1241,6 +1241,10 @@ blockquote cite:before {
         background-color: transparent;
     }
 
+@media screen and (max-width: 991px)
+    .nav-scroll .logo-img {
+        width: 70px;
+}
     .nav-scroll .logo-img {
         width: 160px;
     }

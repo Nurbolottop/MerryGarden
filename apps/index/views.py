@@ -1,8 +1,9 @@
 from django.shortcuts import render
 
 # my imports
-from .models import Settings,Slide,About,News,Video,Services,Team
-
+from apps.index.models import Settings,Slide,Video,Services
+from apps.secondary.models import About,News
+from apps.team.models import Team
 # Create your views here.
 
 def index(request):

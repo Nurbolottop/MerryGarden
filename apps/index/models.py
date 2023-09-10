@@ -117,37 +117,4 @@ class Services(models.Model):
     class Meta:
             verbose_name = "Услуга"
             verbose_name_plural = "Услуги"
-            
-class Team(models.Model):
-    image = ResizedImageField(
-        force_format="WEBP", 
-        quality=100, 
-        upload_to='team/',
-        verbose_name="Фотография",
-        blank = True, null = True
-    )
-    title = models.CharField(
-        max_length=255,
-        verbose_name="Имя"
-    )
-    descriptions = models.TextField(
-        verbose_name="Описание"
-    )
-    whatsapp = models.URLField(
-        verbose_name='Whatspp URL',
-        blank=True, null=True
-    )
-    instagram = models.URLField(
-        verbose_name='Instagram URL',
-        blank=True, null=True
-    )
-    youtube = models.URLField(
-        verbose_name='Youtube URL',
-        blank=True, null=True
-    )
-    def __str__(self):
-        return self.title
-    
-    class Meta:
-            verbose_name = "Наша команда"
-            verbose_name_plural = "Наша команда"
+ 

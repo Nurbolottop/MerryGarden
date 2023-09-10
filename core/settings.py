@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     
     #apps
     'apps.index',
-    'apps.secondary'
+    'apps.secondary',
+    'apps.team',
+    'apps.contacts',
 ]
 
 MIDDLEWARE = [
@@ -132,3 +134,10 @@ MEDIA_ROOT = BASE_DIR/ 'media'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#SMTP_USERS
+EMAIL_USE_TLS = True  # Использовать TLS для защищенного соединения
+EMAIL_HOST = 'smtp.gmail.com'  # Адрес SMTP сервера Gmail
+EMAIL_PORT = 587  # Порт для подключения к SMTP серверу Gmail
+EMAIL_HOST_USER = 'bullabratan@gmail.com'
+EMAIL_HOST_PASSWORD = 'zlrwdyljhsupxnfo'

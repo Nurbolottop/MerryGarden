@@ -2,8 +2,9 @@ from django.contrib import admin
 from django.urls import path
 
 #my imports
-from apps.index.views import index
+from apps.team.views import team
 
 urlpatterns = [
-    path('', index, name ="index"),
+    path('team', team, name ="team"),
+    
 ]
