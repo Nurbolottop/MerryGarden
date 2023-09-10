@@ -56,3 +56,15 @@ class About(models.Model):
             verbose_name = "Информация о нас"
             verbose_name_plural = "Информации о нас"
             
+            
+class Gallery(models.Model):
+    image = models.ImageField(
+        upload_to="gallery_image",
+        verbose_name="Фотография"
+    )
+    
+    class Meta:
+            verbose_name = "Галлерея"
+            verbose_name_plural = "Галлерея"
+            
+            

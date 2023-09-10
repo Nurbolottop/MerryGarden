@@ -61,7 +61,9 @@ body {
     list-style: none;
     word-wrap: break-word;
 }
-
+iframe {
+    background-color: #bd1919; /* Задайте желаемый цвет фона */
+}
 body {
     font-family: 'Raleway', sans-serif;
     font-size: 15px;

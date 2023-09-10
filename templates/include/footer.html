@@ -13,13 +13,13 @@
                     <div class="footer-column footer-explore clearfix">
                         <h3 class="footer-title">Меню</h3>
                         <ul class="footer-explore-list list-unstyled">
-                            <li><a href="#">Главная</a></li>
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Команда</a></li>
+                            <li><a href="{% url 'index' %}">Главная</a></li>
+                            <li><a href="{% url 'about' %}">О нас</a></li>
+                            <li><a href="{% url 'team' %}">Команда</a></li>
                             <li><a href="#">Бронирование</a></li>
-                            <li><a href="#">Галерея</a></li>
+                            <li><a href="{% url 'gallery' %}">Галерея</a></li>
                             <li><a href="#">Портфолио</a></li>
-                            <li><a href="#">Контакты</a></li>
+                            <li><a href="{% url 'contact' %}">Контакты</a></li>
                         </ul>
                     </div>
                 </div>

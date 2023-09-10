@@ -6,7 +6,7 @@
     <!-- Slider -->
     {% include 'include/header.html' %}
     <div class="banner-header section-padding valign bg-img bg-fixed" data-overlay-dark="3"
-        data-background="img/merrigarden/banner/1.jpg">
+        data-background="{% static 'img/merrigarden/banner/1.jpg' %}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-left caption mt-90">
@@ -22,56 +22,48 @@
             <div class="row mb-90">
                 <div class="col-md-6 mb-60">
                     <h3>{{setting.title}}</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis harum sequi asperiores voluptas laborum consequuntur, vel accusantium vitae nulla eveniet officia recusandae animi error possimus minus, optio laboriosam inventore tenetur?</p>
+                    <p>{{setting.descriptions_contacts}}</p>
                     <div class="reservations mb-30">
                         <div class="icon"><span class="flaticon-call"></span></div>
                         <div class="text">
-                            <p>Забронировать</p> <a href="tel:996555777666">996555777666</a>
+                            <p>Забронировать</p> <a href="tel:{{setting.phone}}">{{setting.phone}}</a>
                         </div>
                     </div>
                     <div class="reservations mb-30">
                         <div class="icon"><span class="flaticon-envelope"></span></div>
                         <div class="text">
-                            <p>Email</p> <a href="mailto:info@merrigarden.com">info@merrigarden.com</a>
+                            <p>Email</p> <a href="mailto:{{setting.email}}">{{setting.email}}</a>
                         </div>
                     </div>
                     <div class="reservations">
                         <div class="icon"><span class="flaticon-location-pin"></span></div>
                         <div class="text">
                             <p>Адрес</p> Адрес
-                            <br>г.Ош
+                            <br>{{setting.locations}}
                         </div>
                     </div>
                 </div>
                 <div class="col-md-5 mb-30 offset-md-1">
                     <h3>Свяжитесь с нами</h3>
-                    <form method="post" class="contact__form"
-                        action="">
-                        <!-- form message -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="alert alert-success contact__msg" style="display: none" role="alert"> Your
-                                    message was sent successfully. </div>
-                            </div>
+                    {% comment %} <div class="row">
+                        <div class="col-12">
+                            <div class="alert alert-success contact__msg" style="display: none" role="alert"> Your
+                                message was sent successfully. </div>
                         </div>
-                        <!-- form elements -->
+                    </div> {% endcomment %}
+                    <form method="POST" class="contact__form">
+                        {%csrf_token%}
                         <div class="row">
                             <div class="col-md-6 form-group">
-                                <input name="name" type="text" placeholder="ФИО *" required>
+                                <input name="name" type="text" placeholder="Имя" >
                             </div>
                             <div class="col-md-6 form-group">
                                 <input name="email" type="email" placeholder="Email">
                             </div>
-                            <div class="col-md-6 form-group">
-                                <input name="phone" type="text" placeholder="Номер Телефона *" required>
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input name="subject" type="text" placeholder="Тема">
-                            </div>
                             <div class="col-md-12 form-group">
-                                <textarea name="message" id="message" cols="30" rows="4" placeholder="Сообщение"></textarea>
+                                <textarea name="message" cols="30" rows="4" placeholder="Сообщение"></textarea>
                             </div>
-                            <div class="col-md-12">
+                             <div class="col-md-12">
                                 <button type="submit" class="butn-dark2"><span>Отправить</span></button>
                             </div>
                         </div>
@@ -81,14 +73,14 @@
             <!-- Map Section -->
             <div class="row">
                 <div class="col-md-12 map animate-box" data-animate-effect="fadeInUp">
-                    Добавь карту сюда!!!!!!!!!!!!! Google 2gis хз
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d182.48457449919078!2d72.82173580062053!3d40.514867938115266!2m3!1f297.1874999999997!2f49.6491546040172!3f0!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x38bdaf989d82681d%3A0x3f6e349d0a46e1be!2z0JzQtdGA0YDQuCDQk9Cw0YDQtNC10L0g0J7RiA!5e1!3m2!1sru!2skg!4v1694352738396!5m2!1sru!2skg" width="1130" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
     </section>
     <!-- Reservation & Booking Form -->
     <section class="testimonials">
-        <div class="background bg-img bg-fixed section-padding pb-0" data-background="img/merrigarden/banner/2.jpg"
+        <div class="background bg-img bg-fixed section-padding pb-0" data-background="{% static 'img/merrigarden/banner/2.jpg' %}"
             data-overlay-dark="2">
             <div class="container">
                 <div class="row">

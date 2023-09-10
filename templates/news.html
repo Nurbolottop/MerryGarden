@@ -26,12 +26,12 @@
                     <div class="item br-20">
                         <div class="position-re o-hidden"><img src="{{news.image.url}}" alt=""></div>
                         <div class="con">
-                            <h5><a href="#">{{news.title}}</a> </h5>
+                            <h5><a href="{% url 'news_detail' news.id %}">{{news.title}}</a> </h5>
                             <div class="line"></div>
                             <div class="row facilities">
                                 <div class="col col-md-5 text-end">
                                     <div class="permalink">
-                                        <a href="#">
+                                        <a href="{% url 'news_detail' news.id %}">
                                             Подробнее<i class="ti-arrow-right"></i>
                                         </a>
                                     </div>
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                     </div>
-                </div
+                </div>
                 {% endfor %}
             </div>
             <div class="row">
