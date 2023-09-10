@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import config
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -27,6 +26,8 @@ SECRET_KEY = config.SECRET_KEY
 DEBUG = config.DEBUG
 
 ALLOWED_HOSTS = []
+
+
 
 
 # Application definition
@@ -141,3 +142,8 @@ EMAIL_HOST = 'smtp.gmail.com'  # Адрес SMTP сервера Gmail
 EMAIL_PORT = 587  # Порт для подключения к SMTP серверу Gmail
 EMAIL_HOST_USER = 'bullabratan@gmail.com'
 EMAIL_HOST_PASSWORD = 'zlrwdyljhsupxnfo'
+
+
+#Telegram
+TELEGRAM_TOKEN = "6487168248:AAGkrnDno5IMlIzdIu1UNN6QX679TGVQyUA"
+ADMIN_ID = "-4028786736"

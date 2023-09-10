@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
+
 
 # my imports
 from apps.index.models import Settings,Slide,Video,Services
 from apps.secondary.models import About,News
 from apps.team.models import Team
+from apps.contacts.models import Reserv
+from apps.contacts.views import get_text
 # Create your views here.
 
 def index(request):
@@ -14,4 +17,17 @@ def index(request):
     video = Video.objects.latest('id')
     services = Services.objects.all()
     team = Team.objects.all()
+    if request.method =="POST":
+        print("Work")
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        date = request.POST.get('date')
+        reserv = Reserv.objects.create(name = name,phone = phone,date = date)
+        get_text(f""" Оставлен бронь✅
+                 
+                 
+ФИО: {reserv.name}
+Телефонный номер: {reserv.phone}
+Дата: {reserv.date}
+""")
     return render(request, 'index.html', locals())

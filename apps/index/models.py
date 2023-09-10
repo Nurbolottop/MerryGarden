@@ -45,7 +45,14 @@ class Settings(models.Model):
         verbose_name='Youtube URL',
         blank=True, null=True
     )
-    
+    telegram_token = models.CharField(
+        max_length=255,
+        verbose_name="Телеграм токен"
+    )
+    admin_token = models.CharField(
+        max_length=255,
+        verbose_name="Админ айди"
+    )
     def __str__(self):
         return self.title
     
