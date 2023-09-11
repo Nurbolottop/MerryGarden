@@ -2,29 +2,8 @@ from django.shortcuts import render,redirect
 from django.core.mail import send_mail
 
 from apps.index.models import Settings
-from apps.contacts.models import Contact
+from apps.contacts.models import Contact,Reserv
 # Create your views here.
-def contact(request):
-    setting = Settings.objects.latest("id")
-    print("KOT")
-    if request.method =="POST":
-        print("Work")
-        name = request.POST.get('name')
-        email = request.POST.get('email')
-        message = request.POST.get('message')
-        Contact.objects.create(name = name,email = email,message = message)
-        send_mail(
-            f'{message}',
-            f'Добрый день {name}, спасибо за обратную связь, мы скоро свами свяжемся.Ваше обращение: {message}. Ваша  почта: {email}',
-            "noreply@somehost.local",
-            [email])
-        return redirect('about')
-    return render(request, "contact.html",locals())
-
-
-
-
-
 # BOT
 
 from django.shortcuts import render
@@ -74,3 +53,45 @@ def get_text(message):
 def echo(message:types.Message):
     # bot.delete_message(message.chat.id, message.message_id)
     bot.send_message(message.chat.id, "Я вас не понял")
+    
+    
+
+def contact(request):
+    setting = Settings.objects.latest("id")
+    print("KOT")
+    if request.method =="POST":
+        print("Work")
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        message = request.POST.get('message')
+        contacts =Contact.objects.create(name = name,email = email,message = message)
+        send_mail(
+            f'{message}',
+            f'Добрый день {name}, спасибо за обратную связь, мы скоро свами свяжемся.Ваше обращение: {message}. Ваша  почта: {email}',
+            "noreply@somehost.local",
+            [email])
+        get_text(f""" Оставлено Заявка на сообщение
+                 
+                 
+ФИО: {contacts.name}
+Телефонный номер: {contacts.email}
+Сообщение: {contacts.message}
+""")
+        return redirect('about')
+    if request.method =="POST":
+        print("Work")
+        name = request.POST.get('name')
+        phone = request.POST.get('phone')
+        date = request.POST.get('date')
+        reserv = Reserv.objects.create(name = name,phone = phone,date = date)
+        get_text(f""" Оставлен бронь✅
+                 
+                 
+ФИО: {reserv.name}
+Телефонный номер: {reserv.phone}
+Дата: {reserv.date}
+""")
+    return render(request, "contact.html",locals())
+
+
+

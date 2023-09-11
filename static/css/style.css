@@ -1218,7 +1218,11 @@ blockquote cite:before {
         transform: translateY(0);
     }
 }
-
+@media screen and (max-width: 991px){
+    .nav-scroll .logo-img {
+        width: 70px;
+    }
+}
 @media screen and (max-width: 991px) {
     .navbar {
         padding-left: 0px;
@@ -1243,10 +1247,6 @@ blockquote cite:before {
         background-color: transparent;
     }
 
-@media screen and (max-width: 991px)
-    .nav-scroll .logo-img {
-        width: 70px;
-}
     .nav-scroll .logo-img {
         width: 160px;
     }
@@ -1262,6 +1262,7 @@ blockquote cite:before {
         margin-bottom: 0px;
         width: 160px;
         padding: 0;
+        z-index:9999;
     }
 
     .navbar button {

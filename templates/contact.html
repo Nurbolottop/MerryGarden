@@ -51,23 +51,43 @@
                                 message was sent successfully. </div>
                         </div>
                     </div> {% endcomment %}
-                    <form method="POST" class="contact__form">
+                    <form method = "POST" class="form1 clearfix">
                         {%csrf_token%}
-                        <div class="row">
-                            <div class="col-md-6 form-group">
-                                <input name="name" type="text" placeholder="Имя" >
-                            </div>
-                            <div class="col-md-6 form-group">
-                                <input name="email" type="email" placeholder="Email">
-                            </div>
-                            <div class="col-md-12 form-group">
-                                <textarea name="message" cols="30" rows="4" placeholder="Сообщение"></textarea>
-                            </div>
-                             <div class="col-md-12">
-                                <button type="submit" class="butn-dark2"><span>Отправить</span></button>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input1_wrapper">
+                                <label>Имя</label>
+                                <div class="input1_inner">
+                                    <input type="text" name = "name" class="form-control baseinput"
+                                        placeholder="ФИО">
+                                </div>
                             </div>
                         </div>
-                    </form>
+                        <div class="col-md-12">
+                            <div class="input1_wrapper">
+                                <label>Почта</label>
+                                <div class="input1_inner">
+                                    <input type="text" name = "email" class="form-control baseinput"
+                                        placeholder="Телефон">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="input1_wrapper">
+                                <label>Сообщение</label>
+                                <div class="input1_inner">
+                                    <textarea type="text" name = "message" class="form-control input datepicker"
+                                    placeholder="Сообщение"   ></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-12">
+                            <button type="submit" class="btn-form1-submit mt-15">Забронировать</button>
+                        </div>
+                    </div>
+                </form>
                 </div>
             </div>
             <!-- Map Section -->
