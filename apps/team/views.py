@@ -12,17 +12,18 @@ def team(request):
     team = Team.objects.all()
     founder = Founder.objects.latest('id')
     if request.method =="POST":
-        print("Work")
         name = request.POST.get('name')
         phone = request.POST.get('phone')
         date = request.POST.get('date')
-        reserv = Reserv.objects.create(name = name,phone = phone,date = date)
+        message = request.POST.get('message')
+        reserv = Reserv.objects.create(name = name,phone = phone,date = date,message=message)
         get_text(f""" Оставлен бронь✅
                  
                  
 ФИО: {reserv.name}
 Телефонный номер: {reserv.phone}
 Дата: {reserv.date}
+Сообщение: {reserv.message}
 """)
     return render(request, 'team.html', locals())
     

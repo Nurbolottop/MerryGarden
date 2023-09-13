@@ -64,7 +64,19 @@ class Gallery(models.Model):
     )
     
     class Meta:
-            verbose_name = "Галлерея"
-            verbose_name_plural = "Галлерея"
+            verbose_name = "Галерея"
+            verbose_name_plural = "Галерея"
             
+class List(models.Model):
+    image_one = models.ImageField(
+        upload_to="gallery_image",
+        verbose_name="Первая фотография"
+    )
+    image_two = models.ImageField(
+        upload_to="gallery_image",
+        verbose_name="Вторая фотография"
+    )
+    class Meta:
+            verbose_name = "Прайс"
+            verbose_name_plural = "Прайс"
             

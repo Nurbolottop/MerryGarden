@@ -12,6 +12,10 @@ class Contact(models.Model):
     message = models.TextField(
         verbose_name="Сообщение"
     )
+    phone = models.CharField(
+        max_length=255,
+        verbose_name="Телефонный номер"
+    )
 
     def __str__(self):
         return f"{self.name}"
@@ -72,7 +76,9 @@ class Reserv(models.Model):
         max_length=255,
         verbose_name= "Дата"
     )
-    
+    message = models.TextField(
+        verbose_name="Сообщение"
+    )
     class Meta:
         verbose_name = 'Брони'
         verbose_name_plural = "Бронь"

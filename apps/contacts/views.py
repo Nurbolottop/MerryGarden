@@ -64,7 +64,8 @@ def contact(request):
         name = request.POST.get('name')
         email = request.POST.get('email')
         message = request.POST.get('message')
-        contacts =Contact.objects.create(name = name,email = email,message = message)
+        phone = request.POST.get('phone')
+        contacts =Contact.objects.create(name = name,email = email,message = message,phone=phone)
         send_mail(
             f'{message}',
             f'Добрый день {name}, спасибо за обратную связь, мы скоро свами свяжемся.Ваше обращение: {message}. Ваша  почта: {email}',
@@ -76,20 +77,22 @@ def contact(request):
 ФИО: {contacts.name}
 Телефонный номер: {contacts.email}
 Сообщение: {contacts.message}
+Почта: {contacts.phone}
 """)
-        return redirect('about')
+        return redirect('index')
     if request.method =="POST":
-        print("Work")
         name = request.POST.get('name')
         phone = request.POST.get('phone')
         date = request.POST.get('date')
-        reserv = Reserv.objects.create(name = name,phone = phone,date = date)
+        message = request.POST.get('message')
+        reserv = Reserv.objects.create(name = name,phone = phone,date = date,message=message)
         get_text(f""" Оставлен бронь✅
                  
                  
 ФИО: {reserv.name}
 Телефонный номер: {reserv.phone}
 Дата: {reserv.date}
+Сообщение: {reserv.message}
 """)
     return render(request, "contact.html",locals())
 
