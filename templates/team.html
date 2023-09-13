@@ -16,6 +16,35 @@
             </div>
         </div>
     </div>
+    <section class="section-padding-boss">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-subtitle"><span>MerriGarden</span></div>
+                    <div class="section-title">Основатель</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-md-6 animate-box" data-animate-effect="fadeInUp">
+                    <img src="{{founder.image.url}}" alt="" class="br-20">
+                </div>
+                <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
+                    <div class="section-subtitle">{{founder.found}}</div>
+                    <div class="section-title">{{founder.name}}</div>
+                    <p>{{founder.descriptions}}</p>
+                    {%if founder.descriptions_one%}
+                    <p>{{founder.descriptions_one}}</p>
+                    {%endif%}
+                    {% if founder.descriptions_three%}
+                    <p>{{founder.descriptions_two}}</p>
+                    {%endif%}
+                    {% if founder.descriptions_three%}
+                    <p>{{founder.descriptions_three}}</p>
+                    {%endif%}
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Team -->
     <section class="team section-padding bg-cream">
