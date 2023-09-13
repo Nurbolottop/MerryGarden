@@ -44,3 +44,40 @@ class Team(models.Model):
     class Meta:
             verbose_name = "Наша команда"
             verbose_name_plural = "Наша команда"
+            
+class Founder(models.Model):
+    image = models.ImageField(
+        upload_to="founder",
+        verbose_name="Фотография"
+    )
+    name = models.CharField(
+        max_length=255,
+        verbose_name="Имя"
+    )
+    found = models.CharField(
+        max_length=255,
+        verbose_name="Достижения"
+    )
+    descriptions = models.TextField(
+        verbose_name="Описание"
+    )
+    descriptions_one = models.TextField(
+        verbose_name="Описание",
+        blank=True,null=True
+    )
+    
+    descriptions_two = models.TextField(
+        verbose_name="Описание",
+        blank=True,null=True
+    )
+    descriptions_three = models.TextField(
+        verbose_name="Описание",
+        blank=True,null=True
+    )
+    def __str__(self) -> str:
+         return self.name
+     
+    class Meta:
+        verbose_name = "Основатели"
+        verbose_name_plural = "Основатель"
+        

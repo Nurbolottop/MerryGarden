@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # my imports
 from apps.index.models import Settings
-from apps.team.models import Team
+from apps.team.models import Team,Founder
 from apps.contacts.models import Reserv
 from apps.contacts.views import get_text
 # Create your views here.
@@ -10,6 +10,7 @@ from apps.contacts.views import get_text
 def team(request):
     setting = Settings.objects.latest('id')
     team = Team.objects.all()
+    founder = Founder.objects.latest('id')
     if request.method =="POST":
         print("Work")
         name = request.POST.get('name')
