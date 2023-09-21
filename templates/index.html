@@ -153,32 +153,34 @@
             </div>
         </div>
     </section>
-    <section class="news section-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section-subtitle"><span>{{setting.title}}</span></div>
-                    <div class="section-title">Команда</div>
+    {% comment %}
+        <section class="news section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-subtitle"><span>{{setting.title}}</span></div>
+                        <div class="section-title">Команда</div>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="owl-carousel owl-theme">
-                        {% for team in team%}
-                        <div class="item br-20">
-                            <div class="position-re o-hidden br-20"> 
-                                <img class="br-20" src="{{team.image.url}}" alt="">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="owl-carousel owl-theme">
+                            {% for team in team%}
+                            <div class="item br-20">
+                                <div class="position-re o-hidden br-20"> 
+                                    <img class="br-20" src="{{team.image.url}}" alt="">
+                                </div>
+                                <div class="con br-20">
+                                    <h5><a>{{team.title}}</a></h5>
+                                </div>
                             </div>
-                            <div class="con br-20">
-                                <h5><a>{{team.title}}</a></h5>
-                            </div>
+                            {% endfor%}
                         </div>
-                        {% endfor%}
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% endcomment %}
     <section class="rooms1 section-padding bg-cream" data-scroll-index="1">
         <div class="container">
             <div class="row">
