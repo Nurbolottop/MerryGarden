@@ -96,7 +96,8 @@ class Video(models.Model):
         verbose_name="Название видео"
     )
     url = models.URLField(
-        verbose_name="Ссылка на видео"
+        verbose_name="Ссылка на видео",
+        blank=True,null=True
     )
     
     def __str__(self):
