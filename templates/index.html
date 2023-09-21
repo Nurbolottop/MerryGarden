@@ -62,7 +62,7 @@
         </div>
     </section>
     <!-- Rooms -->
-    
+    {% if video%}
     <!-- Promo Video -->
     <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3"
         data-background="{{video.image.url}}">
@@ -87,6 +87,7 @@
             </div>
         </div>
     </section>
+    {% endif %}
     <!-- Facilties -->
     <section class="facilties pt-60">
         <div class="container">
