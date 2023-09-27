@@ -53,16 +53,16 @@
                     </div>
                 </div>
                 <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                    <img src="{{about.image_1.url}}" alt="Merri Garden" class="mt-90 mb-30 br-20">
+                    <img src="{{about.image_1.url}}" alt="" class="mt-90 mb-30 br-20">
                 </div>
                 <div class="col col-md-3 animate-box" data-animate-effect="fadeInUp">
-                    <img src="{{about.image_2.url}}" alt="Merri Garden" class="br-20">
+                    <img src="{{about.image_2.url}}" alt="" class="br-20">
                 </div>
             </div>
         </div>
     </section>
     <!-- Rooms -->
-    {% if video%}
+    {% if video.url%}
     <!-- Promo Video -->
     <section class="video-wrapper video section-padding bg-img bg-fixed" data-overlay-dark="3"
         data-background="{{video.image.url}}">
@@ -106,7 +106,7 @@
             <div class="row">
                 <div class="col-md-6 p-0 animate-box" data-animate-effect="fadeInLeft">
                     <div class="img left brl-20">
-                        <a href="#"><img src="{{service.image.url}}" alt="Merri Garden"></a>
+                        <a href="#"><img src="{{service.image.url}}" alt=""></a>
                     </div>
                 </div>
                 <div class="col-md-6 p-0 bg-cream valign animate-box brr-20" data-animate-effect="fadeInRight">
@@ -134,7 +134,7 @@
             </div>
             <div class="row">
                 <div class="col col-md-6 animate-box" data-animate-effect="fadeInUp">
-                    <img src="{{founder.image.url}}" alt="Merri Garden" class="br-20">
+                    <img src="{{founder.image.url}}" alt="" class="br-20">
                 </div>
                 <div class="col-md-6 mb-30 animate-box" data-animate-effect="fadeInUp">
                     <div class="section-subtitle">{{founder.found}}</div>
@@ -168,7 +168,7 @@
                             {% for team in team%}
                             <div class="item br-20">
                                 <div class="position-re o-hidden br-20"> 
-                                    <img class="br-20" src="{{team.image.url}}" alt="Merri Garden">
+                                    <img class="br-20" src="{{team.image.url}}" alt="">
                                 </div>
                                 <div class="con br-20">
                                     <h5><a>{{team.title}}</a></h5>
@@ -193,7 +193,7 @@
                 {% for news in news%}
                 <div class="col-md-4">
                     <div class="item br-20">
-                        <div class="position-re o-hidden"><img src="{{news.image.url}}" alt="Merri Garden"></div>
+                        <div class="position-re o-hidden"><img src="{{news.image.url}}" alt=""></div>
                         <div class="con">
                             <h5><a href="{% url 'news_detail' news.id%}">{{news.title}}</a> </h5>
                             <div class="line"></div>
@@ -215,35 +215,7 @@
     </section>
     <!-- Reservation & Booking Form -->
     {% include 'include/reserv.html' %}
-    <!-- Clients -->
-    <section class="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="owl-carousel owl-theme">
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/1.png' %}" alt="Merri Garden"></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/2.png' %}" alt="Merri Garden"></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/3.png' %}" alt="Merri Garden"></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/4.png' %}" alt="Merri Garden"></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/5.png' %}" alt="Merri Garden"></a>
-                        </div>
-                        <div class="clients-logo">
-                            <a href="#0"><img src="{% static 'img/clients/6.png' %}" alt="Merri Garden"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
     <!-- Footer -->
     {% include 'include/footer.html' %}
    

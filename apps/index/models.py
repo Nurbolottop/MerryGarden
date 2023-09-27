@@ -93,7 +93,8 @@ class Video(models.Model):
     )
     title = models.CharField(
         max_length=255,
-        verbose_name="Название видео"
+        verbose_name="Название видео",
+        blank=True,null=True
     )
     url = models.URLField(
         verbose_name="Ссылка на видео",
