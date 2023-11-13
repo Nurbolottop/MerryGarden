@@ -75,9 +75,9 @@ def contact(request):
                  
                  
 ФИО: {contacts.name}
-Телефонный номер: {contacts.email}
+Почта: {contacts.email}
 Сообщение: {contacts.message}
-Почта: {contacts.phone}
+Телефонный номер: {contacts.phone}
 """)
         return redirect('index')
     if request.method =="POST":
