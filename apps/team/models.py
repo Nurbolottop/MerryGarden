@@ -46,9 +46,12 @@ class Team(models.Model):
             verbose_name_plural = "Наша команда"
             
 class Founder(models.Model):
-    image = models.ImageField(
-        upload_to="founder",
-        verbose_name="Фотография"
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='founder/',
+        verbose_name="Фотография",
+        blank = True, null = True
     )
     name = models.CharField(
         max_length=255,

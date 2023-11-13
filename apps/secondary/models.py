@@ -58,9 +58,12 @@ class About(models.Model):
             
             
 class Gallery(models.Model):
-    image = models.ImageField(
-        upload_to="gallery_image",
-        verbose_name="Фотография"
+    image = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='gallery/',
+        verbose_name="фотография",
+        blank = True, null = True
     )
     
     class Meta:
@@ -68,13 +71,19 @@ class Gallery(models.Model):
             verbose_name_plural = "Галерея"
             
 class List(models.Model):
-    image_one = models.ImageField(
-        upload_to="gallery_image",
-        verbose_name="Первая фотография"
+    image_one = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='price/',
+        verbose_name="Первая фотография",
+        blank = True, null = True
     )
-    image_two = models.ImageField(
-        upload_to="gallery_image",
-        verbose_name="Вторая фотография"
+    image_two = ResizedImageField(
+        force_format="WEBP", 
+        quality=100, 
+        upload_to='price/',
+        verbose_name="Первая фотография",
+        blank = True, null = True
     )
     class Meta:
             verbose_name = "Прайс"
